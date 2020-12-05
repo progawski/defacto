@@ -115,12 +115,14 @@ nav div{
 #start{
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 800px;
-    background-image: url('../images/white_desk2.jpg');
-    background-size: contain;
+    margin: auto;
+    width: 1366px;
+    height: 500px;
+    background-image: url('../images/white_desk.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position-x: left;
+    background-position-y: center;
 }
 
 /* RWD */

@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Siemreap&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 @font-face {
     font-family: 'Siemreap';
@@ -18,17 +19,33 @@ body {
 }
 
 .container{
-    width: 60%;
+    width: 70%;
     max-width: 1366px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.justify-content-start{
+    justify-content: flex-start;
+}
+.align-items-center{
+    align-items: center;
 }
 
 /* Navigation bar */
 
 header{
     background-color: rgba(255, 255, 255, 1);
-    position: absolute;
     width: 100%;
-    z-index: 1;
 }
 nav{
     margin: 20px auto;
@@ -116,13 +133,33 @@ nav div{
     display: flex;
     justify-content: center;
     margin: auto;
-    width: 1366px;
-    height: 500px;
-    background-image: url('../images/white_desk.jpg');
+    width: 100%;
+    max-width: 1920px;
+    height: 800px;
+    background-image: url('../images/white_desk.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: left;
-    background-position-y: center;
+    background-position-x: center;
+    background-position-y: top;
+}
+
+.main-title{
+    font-family: 'Archivo Black';
+    text-transform: uppercase;
+    color: #672290;
+    font-size: 36px;
+}
+
+.service-list{
+    list-style: none;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+.service-list li{
+    font-size: 20px;
+    margin-left: 0;
+    padding-left: 10;
 }
 
 /* RWD */

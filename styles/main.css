@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Siemreap&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
 
 @font-face {
     font-family: 'Siemreap';
@@ -20,7 +21,10 @@ body {
 
 .container{
     width: 70%;
-    max-width: 1366px;
+    max-width: 1920px;
+}
+.w-50{
+    width: 50%;
 }
 
 .row{
@@ -40,6 +44,12 @@ body {
 .align-items-center{
     align-items: center;
 }
+.violet{
+    color: #672290;
+}
+.white{
+    color: #fff;
+}
 
 /* Navigation bar */
 
@@ -49,17 +59,15 @@ header{
 }
 nav{
     margin: 20px auto;
-    padding: 0px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 nav div{
     display: flex;
     justify-content: space-between;
 }
-#brandLogo img{
+#brand-logo img{
     height: 45px; 
 }
 #menu{
@@ -69,14 +77,14 @@ nav div{
     display: block;
     height: 100%;
 }
-.menuItem{
+.menu-item{
     display: inline-block;
     margin: 0 0.8em;
 }
 #menuIcon {
     display: none;
 }
-.menuLink {
+.menu-link {
 	position: relative;
     display: inline-block;
     padding: 10px 5px;
@@ -89,8 +97,8 @@ nav div{
     transition: color 0.3s;
     font-family: 'Roboto';
 }
-.menuLink::before,
-.menuLink::after {
+.menu-link::before,
+.menu-link::after {
 	position: absolute;
 	left: 0;
 	width: 100%;
@@ -105,22 +113,22 @@ nav div{
 	-moz-transform: translateY(-10px);
 	transform: translateY(-10px);
 }
-.menuLink::before {
+.menu-link::before {
 	top: 0;
 	-webkit-transform: translateY(-10px);
 	-moz-transform: translateY(-10px);
 	transform: translateY(-10px);
 }
-.menuLink::after {
+.menu-link::after {
 	bottom: 0;
 	-webkit-transform: translateY(10px);
 	-moz-transform: translateY(10px);
 	transform: translateY(10px);
 }
-.menuLink:hover::before,
-.menuLink:focus::before,
-.menuLink:hover::after,
-.menuLink:focus::after {
+.menu-link:hover::before,
+.menu-link:focus::before,
+.menu-link:hover::after,
+.menu-link:focus::after {
 	opacity: 1;
 	-webkit-transform: translateY(0px);
 	-moz-transform: translateY(0px);
@@ -135,7 +143,7 @@ nav div{
     margin: auto;
     width: 100%;
     max-width: 1920px;
-    height: 800px;
+    height: 750px;
     background-image: url('../images/white_desk.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -143,11 +151,22 @@ nav div{
     background-position-y: top;
 }
 
-.main-title{
-    font-family: 'Archivo Black';
+.title{
+    /* text-align: center; */
+    font-family: 'Public Sans';
     text-transform: uppercase;
-    color: #672290;
-    font-size: 36px;
+    font-size: 2.2em;
+    padding: 0;
+    margin: 0;
+    /* text-shadow: 0px 5px 16px rgba(0, 0, 0, 0.4); */
+    text-shadow: 0px 5px 16px #68229088;
+}
+.subtitle{
+    /* text-align: center; */
+    font-family: 'Roboto';
+    color: #000;
+    font-size: 1.3em;
+    margin-top: 0.7em;
 }
 
 .service-list{
@@ -162,29 +181,80 @@ nav div{
     padding-left: 10;
 }
 
+/* About */
+
+#about{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    max-width: 1920px;
+    padding-top: 72px;
+}
+.description{
+    margin-top: 2.5em;
+    font-family: 'Roboto';
+    font-size: 1.2em;
+}
+.description p:first-of-type{
+    margin-top: 0;
+}
+#portrait{
+    float: right;
+    padding-left: 50px;
+    width: 40%;
+}
+.parallelogram{
+    width: 250px;
+    transform: skew(20deg);
+    background: #672290;
+    padding: 10px 0px;
+}
+.parallelogram span{
+    transform: skew(-20deg);
+}
+
+/* Back to top */
+
+#top-icon{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+#top-icon a{
+    color: #672290;
+}
+
+
 /* RWD */
 
-/* Small devices (landscape phones, less than 768px) */
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 1366px) {
+    .container{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 767px) {
     nav{
       flex-direction: column;
     }
     nav div{
       width: 100%;
     }
-    #brandLogo{
+    #brand-logo{
       display: block;
     }
     #menu{
       display: none;
     }
-    .menuItem{
-    display: block;
-    text-align: center;
-    margin: 1.8em 0;
+    .menu-item{
+        display: block;
+        text-align: center;
+        margin: 1.8em 0;
     }
     /* @media (orientation: landscape){
-      .menuItem{
+      .menu-item{
         margin: 1.8em 0;
       }
     } */

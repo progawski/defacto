@@ -12,7 +12,7 @@
     <header>
         <nav class="container">
             <div>
-                <a href="#start" id="brandLogo"><img src="images/defacto_text.png" alt="DeFacto Logo"></a>
+                <a href="#start" id="brand-logo"><img src="images/defacto_text.png" alt="DeFacto Logo"></a>
                 <button id="menuIcon" class="hamburger hamburger--squeeze" type="button">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
@@ -20,28 +20,42 @@
                 </button>
             </div>
             <ul id="menu"> 
-                <li class="menuItem"><a class="menuLink" href="#start">Start</a></li>
-                <li class="menuItem"><a class="menuLink" href="#about">O nas</a></li>
-                <li class="menuItem"><a class="menuLink" href="#offer">Oferta</a></li>
-                <li class="menuItem"><a class="menuLink" href="#price">Cennik</a></li>
-                <li class="menuItem"><a class="menuLink" href="#contact">Kontakt</a></li>
+                <li class="menu-item"><a class="menu-link" href="#start">Start</a></li>
+                <li class="menu-item"><a class="menu-link" href="#about">O nas</a></li>
+                <li class="menu-item"><a class="menu-link" href="#offer">Oferta</a></li>
+                <li class="menu-item"><a class="menu-link" href="#certificates">Certyfikaty</a></li>
+                <li class="menu-item"><a class="menu-link" href="#contact">Kontakt</a></li>
             </ul>          
         </nav>
     </header>
-    <div id="start">
+    <div id="start" class="row">
         <div class="container row justify-content-start align-items-center">
-            <div class="col">
-                <div class="main-title row">
-                    Biuro Rachunkowe - Gdańsk
-                </div>
-                <ul class="service-list">
+            <div class="col w-50">
+                <p class="title violet">Witaj na stronie Biura Rachunkowego - <b>De Facto</b></p>
+                <p class="subtitle">Świadczymy kompleksowe i profesjonalne usługi księgowe</p>
+
+                <!-- <ul class="service-list">
                     <li class="row align-items-center"><i class="fa fa-2x fa-check-circle" style="color: #672290; margin-right: 10px;"></i>Usługi księgowe</li>
                     <li class="row align-items-center"><i class="fa fa-2x fa-check-circle" style="color: #672290; margin-right: 10px;"></i>Usługi kadrowo - płacowe</li>
                     <li class="row align-items-center"><i class="fa fa-2x fa-check-circle" style="color: #672290; margin-right: 10px;"></i>Doradztwo prawno księgowe</li>
-                </ul>  
+                </ul>   -->
             </div>
         </div>
     </div>
+    <div id="about" class="row">
+        <div class="container">
+            <div class="parallelogram row justify-content-center align-items-center"><span class="title white">O nas</span></div>
+            <div class="row">
+                <div class="description">
+                    <img id="portrait" src="images/panix.png" alt="Pani X">
+                    <p>Biuro rachunkowe De Facto posiada wieloletnią tradycję w prowadzeniu księgowości na terenie Gdańska. Na rynku pojawiliśmy się w roku 2003r, ówcześnie w formie jednoosobowej działalności gospodarczej by następnie w 2013 roku przekształcić się w spółkę z ograniczoną odpowiedzialnością. Nasza siedziba mieści się w dzielnicy Siedlce w północno-zachodniej części Gdańska. Na dzień dzisiejszy możemy pochwalić się współpracą w zakresie rachunkowości z liczbą ponad 100 zadowolonych z naszych usług podmiotów gospodarczych w formie jednoosobowych działalności gospodarczych, spółek osobowych i kapitałowych oraz fundacji i stowarzyszeń.</p>
+                    <p>Profesjonalizm oraz najwyższy poziom świadczonych usług księgowych gwarantuje Państwu nie tylko kilkunastoletnie doświadczenie w ich wykonywaniu, ale również Licencja Ministra Finansów nr 4760/97 na podstawie, której nasze biuro rachunkowe nieprzerwanie od 2003 roku zajmuje się szeroko pojętą księgowością oraz doradztwem podatkowym na terenie ukochanego Gdańska.</p>
+                    <p>Nasze biuro rachunkowe głównie opiera się na wiedzy oraz doświadczeniu właścicielki firmy czyli Pani X będącej jej założycielką, która rzetelnie dobrała odpowiednio wykwalifikowaną kadrę będącą fundamentem terminowego prowadzenia księgowości dla tak dużej liczby podmiotów gospodarczych.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="top-icon"><a href="#start"><i class="fa fa-5x fa-chevron-circle-up"></i></a></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

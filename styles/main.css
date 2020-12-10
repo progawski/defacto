@@ -35,17 +35,29 @@ body {
     display: flex;
     flex-direction: column;
 }
+.flex-grow-1{
+    flex-grow: 1;
+}
+.flex{
+    flex: 1;
+}
 .justify-content-center{
     justify-content: center;
 }
 .justify-content-start{
     justify-content: flex-start;
 }
+.justify-content-around{
+    justify-content: space-around;
+}
 .align-items-center{
     align-items: center;
 }
 .violet{
     color: #672290;
+}
+.violet-bg{
+    background-color: #672290;
 }
 .white{
     color: #fff;
@@ -54,6 +66,7 @@ body {
 /* Navigation bar */
 
 header{
+    position: absolute;
     background-color: rgba(255, 255, 255, 1);
     width: 100%;
 }
@@ -169,18 +182,6 @@ nav div{
     margin-top: 0.7em;
 }
 
-.service-list{
-    list-style: none;
-    padding: 0;
-    font-family: 'Roboto';
-}
-
-.service-list li{
-    font-size: 20px;
-    margin-left: 0;
-    padding-left: 10;
-}
-
 /* About */
 
 #about{
@@ -192,7 +193,6 @@ nav div{
     padding-top: 72px;
 }
 .description{
-    margin-top: 2.5em;
     font-family: 'Roboto';
     font-size: 1.2em;
 }
@@ -209,9 +209,46 @@ nav div{
     transform: skew(20deg);
     background: #672290;
     padding: 10px 0px;
+    margin-bottom: 80px;
 }
 .parallelogram span{
     transform: skew(-20deg);
+}
+
+/* Offer */
+
+#offer{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    max-width: 1920px;
+    padding-top: 72px;
+}
+.offer-title{
+    font-family: 'Public Sans';
+    font-size: 1.6em;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    font-weight: normal;
+    text-align: center;
+}
+.offer-icon{
+    height: 150px;
+    width: auto;
+    margin: auto;
+}
+.offer-list{
+    list-style: none;
+    padding: 0;
+    font-size: 1.2em;
+    font-family: 'Roboto'
+}
+
+.offer-list li{
+    font-size: 20px;
+    margin-left: 0;
+    padding-left: 10;
 }
 
 /* Back to top */
@@ -220,12 +257,103 @@ nav div{
     position: fixed;
     right: 10px;
     bottom: 10px;
+    width: 80px;
+    opacity: 0.7;
 }
 
-#top-icon a{
-    color: #672290;
-}
+/* Certificates */
 
+.certificate{
+    display: flex;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 33%;
+  }
+  .certificateImage{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    transition: transform 100ms ease-in-out;
+  }
+  .certificate:hover .certificateImage{
+    transform: scale(1.1);
+    transition-delay: 100ms;
+    transition: transform 100ms ease-in-out;
+  }
+  .certificateFooter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-direction: column;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    transition: height 200ms ease-in-out, background-color 200ms ease-in-out;
+    color: #fff;
+    text-shadow: 2px 2px 1px #000;
+    overflow: hidden;
+  }
+  .certificate:hover .certificateFooter{
+    height: 30%;
+    transition: height 200ms ease-in-out, background-color 200ms ease-in-out;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition-delay: 0.1s; 
+  }
+  .certificateFooter h1{
+    margin: 0 0.5em;
+    padding: 5px 0;
+  }
+  .certificateFooter h3{
+    margin: 0 0.5em;
+    padding: 0;
+  }
+  #carouselContainer{
+    position: relative;
+    text-align: center;
+    margin: auto;
+  }
+  .carousel {
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: auto;
+  }
+  .arrow{
+    z-index: 1;
+    top: 50%;
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-image: url('../images/arrow.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: cover;
+  }
+  #previousCertificate{
+    right: 0;
+    transition: all .1s ease-in-out;
+    stroke: 2px solid #000;
+  }
+  #previousCertificate:active{
+    right: -5px;
+    transform: scale(1.2);
+    transition: all .1s ease-in-out;
+  }
+  #nextCertificate{
+    left: 0;
+    transform: scaleX(-1);
+    transition: all .1s ease-in-out;
+  }
+  #nextCertificate:active{
+    left: -5px;
+    transform: scaleX(-1.2) scaleY(1.2);
+    transition: all .1s ease-in-out;
+  }
 
 /* RWD */
 

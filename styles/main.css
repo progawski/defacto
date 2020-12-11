@@ -205,7 +205,7 @@ nav div{
     width: 40%;
 }
 .parallelogram{
-    width: 250px;
+    width: 300px;
     transform: skew(20deg);
     background: #672290;
     padding: 10px 0px;
@@ -258,102 +258,68 @@ nav div{
     right: 10px;
     bottom: 10px;
     width: 80px;
-    opacity: 0.7;
+    opacity: 0;
 }
 
 /* Certificates */
 
-.certificate{
+#certificates{
     display: flex;
-    position: relative;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    max-width: 1920px;
+    padding-top: 72px;
+}
+.certificate{
     display: inline-block;
     overflow: hidden;
-    width: 33%;
-  }
-  .certificateImage{
+    width: 33.33%;
+}
+.certificateImage{
     display: flex;
     justify-content: center;
     width: 100%;
     transition: transform 100ms ease-in-out;
-  }
-  .certificate:hover .certificateImage{
-    transform: scale(1.1);
-    transition-delay: 100ms;
-    transition: transform 100ms ease-in-out;
-  }
-  .certificateFooter{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    flex-direction: column;
-    bottom: 0;
-    height: 0;
-    width: 100%;
-    transition: height 200ms ease-in-out, background-color 200ms ease-in-out;
-    color: #fff;
-    text-shadow: 2px 2px 1px #000;
-    overflow: hidden;
-  }
-  .certificate:hover .certificateFooter{
-    height: 30%;
-    transition: height 200ms ease-in-out, background-color 200ms ease-in-out;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition-delay: 0.1s; 
-  }
-  .certificateFooter h1{
-    margin: 0 0.5em;
-    padding: 5px 0;
-  }
-  .certificateFooter h3{
-    margin: 0 0.5em;
-    padding: 0;
-  }
-  #carouselContainer{
+}
+.carousel {
     position: relative;
-    text-align: center;
-    margin: auto;
-  }
-  .carousel {
     text-align: center;
     overflow: hidden;
     white-space: nowrap;
     margin: auto;
-  }
-  .arrow{
+}
+.arrow{
     z-index: 1;
-    top: 50%;
+    top: calc(50% - 25px);
     position: absolute;
-    color: #fff;
-    font-size: 20px;
     cursor: pointer;
-    width: 50px;
+    width: 30px;
     height: 50px;
-    background-image: url('../images/arrow.svg');
+    background-image: url('../images/arrow.png');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: cover;
-  }
-  #previousCertificate{
-    right: 0;
+}
+#previousCertificate{
+    right: 8px;
     transition: all .1s ease-in-out;
-    stroke: 2px solid #000;
-  }
-  #previousCertificate:active{
-    right: -5px;
+}
+#previousCertificate:active{
+    right: 2px;
     transform: scale(1.2);
     transition: all .1s ease-in-out;
-  }
-  #nextCertificate{
-    left: 0;
+}
+#nextCertificate{
+    left: 8px;
     transform: scaleX(-1);
     transition: all .1s ease-in-out;
-  }
-  #nextCertificate:active{
-    left: -5px;
+}
+#nextCertificate:active{
+    left: 2px;
     transform: scaleX(-1.2) scaleY(1.2);
     transition: all .1s ease-in-out;
-  }
+}
 
 /* RWD */
 

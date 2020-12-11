@@ -25,12 +25,20 @@ $(document).ready(function(){
 
     // Visibility of auto-scrolling icon
 
+    $("#top-icon").css("visibility", "0");
+
     $(window).scroll(function() {
         console.log($(window).scrollTop() + '>' + $(window).height());
         if($(window).scrollTop() > $(window).height()){
-            $("#top-icon").fadeIn();
+            $("#top-icon").css({
+                opacity : 0.7,
+                transition : "opacity 0.3s ease-in-out"
+            });
         } else {
-            $("#top-icon").fadeOut();
+            $("#top-icon").css({
+                opacity : 0,
+                transition : "opacity 0.3s ease-in-out"
+            });
         }
     });
     

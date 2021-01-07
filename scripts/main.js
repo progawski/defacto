@@ -28,7 +28,6 @@ $(document).ready(function(){
     $("#top-icon").css("visibility", "0");
 
     $(window).scroll(function() {
-        console.log($(window).scrollTop() + '>' + $(window).height());
         if($(window).scrollTop() > $(window).height()){
             $("#top-icon").css({
                 opacity : 0.7,

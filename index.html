@@ -4,61 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biuro Rachunkowe De Facto - Gdańsk</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/hamburgers.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <header>
-        <nav class="container">
-            <div>
-                <a href="#start" id="brand-logo"><img src="images/defacto_text.png" alt="DeFacto Logo"></a>
-                <button id="menuIcon" class="hamburger hamburger--squeeze" type="button">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner"></span>
-                    </span>
-                </button>
+        <nav class="navbar navbar-expand-md px-md-5 py-3">
+            <a class="navbar-brand" href="#start"><img  src="images/defacto_text.png" alt="De Facto Logo"></a>
+            <button class="navbar-toggler p-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#672290; font-size:28px;"></i></span>
+            </button>  
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto text-center font-lexend-deca">
+                  <li class="nav-item mx-2">
+                    <a class="nav-link text-nowrap" href="#start">Start</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link text-nowrap" href="#about">O nas</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link text-nowrap" href="#offer">Oferta</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link text-nowrap" href="#certificates">Certyfikaty</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link text-nowrap" href="#about">Kontakt</a>
+                  </li>
+                </ul>
+              </div>
+          </nav>
+          <div id="start" class="jumbotron jumbotron-fluid jumbotron-image vh-100 p-0 m-0 d-flex align-items-center">
+            <div class="container">
+              <div class="row">
+                  <div class="col-11">
+                    <h1 class="display-4 text-nowrap mb-0">Biuro rachunkowe <span>De Facto</span></h1>
+                    <p class="lead">Świadczymy kompleksowe i profesjonalne usługi księgowe</p>
+                  </div>
+              </div>
+              
             </div>
-            <ul id="menu"> 
-                <li class="menu-item"><a class="menu-link" href="#start">Start</a></li>
-                <li class="menu-item"><a class="menu-link" href="#about">O nas</a></li>
-                <li class="menu-item"><a class="menu-link" href="#offer">Oferta</a></li>
-                <li class="menu-item"><a class="menu-link" href="#certificates">Certyfikaty</a></li>
-                <li class="menu-item"><a class="menu-link" href="#contact">Kontakt</a></li>
-            </ul>          
-        </nav>
+          </div>
     </header>
-    <div id="start">
-        <div class="container">
-            <div class="col w-50">
-                <p class="main-title white">Witaj na stronie Biura Rachunkowego - <span class="violet"><b>De Facto</b></span></p>
-                <p class="main-subtitle">Świadczymy kompleksowe i profesjonalne usługi księgowe</p>
-            </div>
-        </div>
-    </div>
-    <div id="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col w-50">
-                    <img id="profile-photo" src="images/panix.png" alt="Profile photo">
-                </div>
-                <div class="col w-50">
-                    <div class="section-title-container">
-                        <span class="section-title">O nas</span>
-                    </div>
-                    <div>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptate harum culpa? Quis porro quos sapiente reprehenderit at neque, deserunt eligendi, explicabo et dolores libero sint quaerat esse obcaecati distinctio magnam, facere asperiores corporis dolorem tenetur! Facilis architecto, a dolorem voluptate eum voluptatem, obcaecati fugiat sunt sequi voluptas adipisci magni maiores beatae voluptatum nobis itaque illo dolores saepe quam nulla hic pariatur rem nostrum blanditiis. Accusantium in ut facilis modi consectetur dicta dolorem fugiat placeat suscipit? Similique deleniti deserunt, dolores ipsa sed itaque temporibus quam magni numquam non unde repudiandae cumque odit quod aliquid nobis consectetur magnam neque id? Iusto?
-                    </div>
-                </div>
-            </div>
- 
-        </div>
-    </div>
 
-    <a href="#start"><img id="top-icon" src="images/arrow-up.svg"/></a>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/8349e99f8d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>

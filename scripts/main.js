@@ -25,21 +25,21 @@ $(document).ready(function(){
 
     // Visibility of auto-scrolling icon
 
-    $("#top-icon").css("visibility", "0");
+    // $("#top-icon").css("visibility", "0");
 
-    $(window).scroll(function() {
-        if($(window).scrollTop() > $(window).height()){
-            $("#top-icon").css({
-                opacity : 0.7,
-                transition : "opacity 0.3s ease-in-out"
-            });
-        } else {
-            $("#top-icon").css({
-                opacity : 0,
-                transition : "opacity 0.3s ease-in-out"
-            });
-        }
-    });
+    // $(window).scroll(function() {
+    //     if($(window).scrollTop() > $(window).height()){
+    //         $("#top-icon").css({
+    //             opacity : 0.7,
+    //             transition : "opacity 0.3s ease-in-out"
+    //         });
+    //     } else {
+    //         $("#top-icon").css({
+    //             opacity : 0,
+    //             transition : "opacity 0.3s ease-in-out"
+    //         });
+    //     }
+    // });
     
     //Carousel
 

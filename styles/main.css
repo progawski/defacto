@@ -1,14 +1,28 @@
-/* General settings */
-
+/* Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 
 
 .font-lexend-deca{
     font-family: 'Lexend Deca';
 }
+
+.font-teko{
+	font-family: 'Teko';
+}
+
+.font-assistant{
+	font-family: 'Assistant';
+}
+
+.font-fjallaone{
+	font-family: 'Fjalla One';
+}
+
+/* General settings */
 
 html, body{
     margin: 0;
@@ -19,10 +33,105 @@ body{
     max-width: 1920px;
 }
 
+.title{
+	color: #707070;
+	background-color: #e5d7eb;
+}
+
+.mt-6{
+	margin-top: 80px;
+}
+
+.mt-7{
+	margin-top: 120px;
+}
+
+
+/* Hexagons */
+
+.hexagon {
+	position: absolute;
+
+	mask-image: url("../images/hexagon.svg");
+	mask-size: 100%;
+	mask-repeat: no-repeat;
+	mask-position: center;
+
+	-webkit-mask-image: url("../images/hexagon.svg");
+	-webkit-mask-size: 100%;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+  }
+
+.hexagon-bg{
+	background-image: url("../images/hexagon.svg");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.hex-size-1{
+	width: 80px;
+	height: 80px;
+}
+.hex-size-2{
+	width: 120px;
+	height: 120px;
+}
+.hex-size-3{
+	width: 160px;
+	height: 160px;
+}
+.hex-size-4{
+	width: 200px;
+	height: 200px;
+}
+.hex-size-5{
+	width: 250px;
+	height: 250px;
+}
+.hex-size-6{
+	width: 300px;
+	height: 300px;
+}
+.hex-size-7{
+	width: 350px;
+	height: 350px;
+}
+.hex-size-8{
+	width: 450px;
+	height: 450px;
+}
+
+
+
+.hex-color-1{
+	background-color: rgba(230, 220, 236, 0.75);
+}
+.hex-color-2{
+	background-color: rgba(241, 232, 246, 1);
+}
+.hex-color-3{
+	background-color: rgba(248, 243, 250, 1);
+}
+.hex-color-4{
+	background-color: rgba(228, 215, 235, 1);
+}
+.hex-color-5{
+	background-color: rgba(197, 171, 213, 1);
+}
+.hex-color-6{
+	background-color: rgba(190, 159, 208, 0.5);
+}
+
+
+/* Navigation bar */
+
 .nav-link{
     position: relative;
     color: #672290;
 }
+
 .nav-link:hover{
     color: #521d70;
 }
@@ -78,6 +187,8 @@ body{
     outline: 2px solid #672290;
 }
 
+/* Start */
+
 .jumbotron{
     max-height: 758px;
 }
@@ -99,4 +210,52 @@ body{
     background-position: left center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* About */
+
+#about{
+	overflow: hidden;
+}
+
+#profile-photo{
+	width: 300px;
+}
+
+#about-description{
+	position: relative;
+}
+
+/* Offer */
+
+.offer-title{
+	color: #8d6b9e;
+}
+.offer-icons{
+	box-sizing: border-box;
+}
+
+/* RWD */
+
+@media (max-width: 480px) {
+
+}
+
+@media (max-width: 768px){
+	#start h1,
+	#start p{
+		text-align: center;
+	}
+}
+
+@media (max-width: 1024px){
+	
+}
+
+@media (max-width: 1200px){
+	
+}
+
+@media (min-width: 1201px){
+	
 }

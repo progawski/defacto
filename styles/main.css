@@ -46,6 +46,14 @@ body{
 	margin-top: 120px;
 }
 
+.section-space{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.section-space:first-child{
+	margin-top: 100px;
+}
+
 
 /* Hexagons */
 
@@ -62,13 +70,6 @@ body{
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: center;
   }
-
-.hexagon-bg{
-	background-image: url("../images/hexagon.svg");
-	background-size: 100% auto;
-	background-repeat: no-repeat;
-	background-position: center;
-}
 
 .hex-size-1{
 	width: 80px;
@@ -118,12 +119,11 @@ body{
 	background-color: rgba(228, 215, 235, 1);
 }
 .hex-color-5{
-	background-color: rgba(197, 171, 213, 1);
+	background-color: hsl(277, 33%, 75%);
 }
 .hex-color-6{
 	background-color: rgba(190, 159, 208, 0.5);
 }
-
 
 /* Navigation bar */
 
@@ -222,18 +222,13 @@ body{
 	width: 300px;
 }
 
-#about-description{
-	position: relative;
-}
 
 /* Offer */
 
 .offer-title{
 	color: #8d6b9e;
 }
-.offer-icons{
-	box-sizing: border-box;
-}
+
 
 /* RWD */
 

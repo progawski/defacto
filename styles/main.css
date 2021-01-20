@@ -229,7 +229,15 @@ body{
 	color: #8d6b9e;
 }
 
+/* Certificates */
 
+.certificate{
+	width: 350px;
+	height: auto;
+}
+#certificates-counter{
+	width: 60px;
+}
 /* RWD */
 
 @media (max-width: 480px) {

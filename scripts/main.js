@@ -43,62 +43,93 @@ $(document).ready(function(){
     
     //Carousel
 
-    var interval = window.setInterval(rotateCertificates, 5000);
-    $('#nextCertificate').on('click', leftCertificate);
-    $('#previousCertificate').on('click', rightCertificate);
+    //var interval = window.setInterval(rotateCertificates, 5000);
+
+    var numCertificates = $('.certificate').length;
+    var currentCertificate = 1;
+
+    console.log(numCertificates);
+
+    $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
+
+
+    $('.certificate').slice(3).hide(); //Show only 3 certificates
+
+    $('#btn-left').on('click', function(){
+        currentCertificate--;
+        if(currentCertificate < 1){
+            currentCertificate = numCertificates;
+        }
+        $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
+    })
+    $('#btn-right').on('click', function(){
+        currentCertificate++;
+        if(currentCertificate > numCertificates){
+            currentCertificate = 1;
+        }
+        $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
+    })
+
+    // $('.certificate').eq(2).each(function(){
+
+    // })
+
+    // var interval = window.setInterval(rotateCertificates, 5000);
+    // $('#nextCertificate').on('click', leftCertificate);
+    // $('#previousCertificate').on('click', rightCertificate);
     
-    function rotateCertificates(){
-        $('#nextCertificate').off('click');
-        $('#previousCertificate').off('click');
+    // function rotateCertificates(){
+    //     $('#nextCertificate').off('click');
+    //     $('#previousCertificate').off('click');
 
-        var firstCertificate = $('.carousel').find('.certificate:first');
-        var width = firstCertificate.outerWidth();
+    //     var firstCertificate = $('.carousel').find('.certificate:first');
+    //     var width = firstCertificate.outerWidth();
         
-        firstCertificate.animate({marginLeft: -width}, 1000, function(){
-            var lastCertificate = $('.carousel').find('.certificate:last');
-            lastCertificate.after(firstCertificate);
-            firstCertificate.css({marginLeft: 4});
-            $('#nextCertificate').on('click', leftCertificate);
-            $('#previousCertificate').on('click', rightCertificate);
-        });
-    }
+    //     firstCertificate.animate({marginLeft: -width}, 1000, function(){
+    //         var lastCertificate = $('.carousel').find('.certificate:last');
+    //         lastCertificate.after(firstCertificate);
+    //         firstCertificate.css({marginLeft: 4});
+    //         $('#nextCertificate').on('click', leftCertificate);
+    //         $('#previousCertificate').on('click', rightCertificate);
+    //     });
+    // }
 
-    function leftCertificate(){
-        window.clearInterval(interval);
-        $('#nextCertificate').off('click');
-        $('#previousCertificate').off('click');
+    // function leftCertificate(){
+    //     window.clearInterval(interval);
+    //     $('#nextCertificate').off('click');
+    //     $('#previousCertificate').off('click');
 
-        var firstCertificate = $('.carousel').find('.certificate:first');
-        var width = firstCertificate.outerWidth();
+    //     var firstCertificate = $('.carousel').find('.certificate:first');
+    //     var width = firstCertificate.outerWidth();
 
-        firstCertificate.animate({marginLeft: -width}, 1000, function(){
-            var lastCertificate = $('.carousel').find('.certificate:last');
-            lastCertificate.after(firstCertificate);
-            firstCertificate.css({marginLeft: 4});
-            $('#nextCertificate').on('click', leftCertificate);
-            $('#previousCertificate').on('click', rightCertificate);
-            interval = window.setInterval(rotateCertificates, 5000);
-        });
-        }
+    //     firstCertificate.animate({marginLeft: -width}, 1000, function(){
+    //         var lastCertificate = $('.carousel').find('.certificate:last');
+    //         lastCertificate.after(firstCertificate);
+    //         firstCertificate.css({marginLeft: 4});
+    //         $('#nextCertificate').on('click', leftCertificate);
+    //         $('#previousCertificate').on('click', rightCertificate);
+    //         interval = window.setInterval(rotateCertificates, 5000);
+    //     });
+    //     }
 
-    function rightCertificate(){
-        window.clearInterval(interval);
-        $('#nextCertificate').off('click');
-        $('#previousCertificate').off('click');
+    // function rightCertificate(){
+    //     window.clearInterval(interval);
+    //     $('#nextCertificate').off('click');
+    //     $('#previousCertificate').off('click');
 
-        var firstCertificate = $('.carousel').find('.certificate:first');
-        var width = firstCertificate.outerWidth();
-        var lastCertificate = $('.carousel').find('.certificate:last');
+    //     var firstCertificate = $('.carousel').find('.certificate:first');
+    //     var width = firstCertificate.outerWidth();
+    //     var lastCertificate = $('.carousel').find('.certificate:last');
 
-        firstCertificate.before(lastCertificate);
-        lastCertificate.css({marginLeft: -width});
+    //     firstCertificate.before(lastCertificate);
+    //     lastCertificate.css({marginLeft: -width});
         
-        lastCertificate.animate({marginLeft: 4}, 1000, function(){
-            $('#nextCertificate').on('click', leftCertificate);
-            $('#previousCertificate').on('click', rightCertificate);
-            interval = window.setInterval(rotateCertificates, 5000);
-        });
-        }
+    //     lastCertificate.animate({marginLeft: 4}, 1000, function(){
+    //         $('#nextCertificate').on('click', leftCertificate);
+    //         $('#previousCertificate').on('click', rightCertificate);
+    //         interval = window.setInterval(rotateCertificates, 5000);
+    //     });
+    //     }
 
 
 

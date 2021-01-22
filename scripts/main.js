@@ -52,22 +52,67 @@ $(document).ready(function(){
 
     $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
 
+    $('.certificate-container img').eq(1).css('width', '100%');
 
-    $('.certificate').slice(3).hide(); //Show only 3 certificates
 
     $('#btn-left').on('click', function(){
-        currentCertificate--;
-        if(currentCertificate < 1){
-            currentCertificate = numCertificates;
-        }
-        $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
-    })
-    $('#btn-right').on('click', function(){
         currentCertificate++;
         if(currentCertificate > numCertificates){
             currentCertificate = 1;
         }
+
         $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
+
+        var firstCertificate = $('#carousel-container').find('.certificate-container:first');
+        var secondCertificate = $('#carousel-container').find('.certificate-container:nth(1)');
+        var thirdCertificate = $('#carousel-container').find('.certificate-container:nth(2)');
+        var lastCertificate = $('#carousel-container').find('.certificate-container:last');
+        var width = firstCertificate.outerWidth();
+
+        // firstCertificate.children().animate({
+        //     height: '0px',
+        //     width: '0px'
+        // }, {duration: 1000, queue: false});
+        firstCertificate.children().animate({
+            width: '0%'
+        }, {duration: 500, queue: false});
+        firstCertificate.animate({
+            marginLeft: -width,
+        }, {duration: 500, queue: false});
+        secondCertificate.children().animate({
+            width: '40%'
+        }, {duration: 500, queue: false});
+        thirdCertificate.children().animate({
+            width: '100%'
+        }, {duration: 500, queue: false, complete: function(){
+            lastCertificate.after(firstCertificate);
+            // firstCertificate.children().animate({
+            //     width : '100%',
+            //     height : 'auto',
+            // });
+            firstCertificate.css({
+                marginLeft: '0',
+            });
+            firstCertificate.children().css({
+                width: '40%'
+            });
+        }});
+    })
+    $('#btn-right').on('click', function(){
+        currentCertificate--;
+        if(currentCertificate < 1){
+            currentCertificate = numCertificates;
+        }
+
+
+        $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
+
+        $('.certificate').eq(2).animate({
+            height: '0px',
+            width: '0px'
+        }, 1000, function(){
+
+        });
     })
 
     // $('.certificate').eq(2).each(function(){

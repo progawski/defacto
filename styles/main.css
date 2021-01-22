@@ -231,13 +231,23 @@ body{
 
 /* Certificates */
 
+#carousel-container{
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.certificate-container{
+	display: inline-block;
+	width: 33%;
+}
 .certificate{
-	width: 350px;
+	width: 40%;
 	height: auto;
 }
 #certificates-counter{
 	width: 60px;
 }
+
 /* RWD */
 
 @media (max-width: 480px) {

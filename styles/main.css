@@ -233,20 +233,39 @@ body{
 
 #carousel-container{
 	width: 100%;
+	height: 500px;
 	white-space: nowrap;
 	overflow: hidden;
 }
 .certificate-container{
 	display: inline-block;
-	width: 33%;
+	width: 33.33%;
+	height: 100%;
+	opacity: 0.5;
+}
+.certificate-container:nth-of-type(2){
+	opacity: 1;
 }
 .certificate{
-	width: 40%;
-	height: auto;
+	height: 100%;
+	width: auto;
 }
 #certificates-counter{
 	width: 60px;
 }
+.scale-0{
+	transform: scale(0);
+	transition: all 500ms;
+}
+.scale-50{
+	transform: scale(0.5);
+	transition: all 500ms;
+}
+.scale-100{
+	transform: scale(1);
+	transition: all 500ms;
+}
+
 
 /* RWD */
 

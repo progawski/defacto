@@ -43,7 +43,9 @@ $(document).ready(function(){
     
     //Carousel
 
-    //var interval = window.setInterval(rotateCertificates, 5000);
+    
+
+   
 
     var numCertificates = $('.certificate').length;
     var currentCertificate = 1;
@@ -51,11 +53,15 @@ $(document).ready(function(){
     console.log(numCertificates);
 
     $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
+    $('.certificate-container:first .certificate').addClass('scale-50');
+    $('.certificate-container:nth(2) .certificate').addClass('scale-50');
 
-    $('.certificate-container img').eq(1).css('width', '100%');
+
+    $('#btn-left').on('click', rotateLeft);
 
 
-    $('#btn-left').on('click', function(){
+    function rotateLeft(){
+        $('#btn-left').off('click');
         currentCertificate++;
         if(currentCertificate > numCertificates){
             currentCertificate = 1;
@@ -69,115 +75,70 @@ $(document).ready(function(){
         var lastCertificate = $('#carousel-container').find('.certificate-container:last');
         var width = firstCertificate.outerWidth();
 
+
+        secondCertificate.fadeTo(500, 0.5);
+        thirdCertificate.fadeTo(500, 1);
+
+        firstCertificate.children().removeClass('scale-50 scale-100').addClass('scale-0');
+        secondCertificate.children().removeClass('scale-0 scale-100').addClass('scale-50');
+        thirdCertificate.children().removeClass('scale-0 scale-50').addClass('scale-100');
+        lastCertificate.children().removeClass('scale-0 scale-100').addClass('scale-50');
+
         // firstCertificate.children().animate({
-        //     height: '0px',
-        //     width: '0px'
-        // }, {duration: 1000, queue: false});
-        firstCertificate.children().animate({
-            width: '0%'
-        }, {duration: 500, queue: false});
+        //     height: '20%'
+        // }, {duration: 500, queue: false});
+        // secondCertificate.children().animate({
+        //     height: '50%'
+        // }, {duration: 500, queue: false});
+        // lastCertificate.children().animate({
+        //     height: '20%',
+        // }, {duration: 500, queue: false});
+        // thirdCertificate.children().animate({
+        //     height: '100%',
+        // }, {duration: 500, queue: false});
         firstCertificate.animate({
-            marginLeft: -width,
-        }, {duration: 500, queue: false});
-        secondCertificate.children().animate({
-            width: '40%'
-        }, {duration: 500, queue: false});
-        thirdCertificate.children().animate({
-            width: '100%'
+            marginLeft: -width
         }, {duration: 500, queue: false, complete: function(){
             lastCertificate.after(firstCertificate);
-            // firstCertificate.children().animate({
-            //     width : '100%',
-            //     height : 'auto',
-            // });
+            // firstCertificate.children().css('width', '100%');
+            $('#btn-left').on('click', rotateLeft);
             firstCertificate.css({
                 marginLeft: '0',
             });
-            firstCertificate.children().css({
-                width: '40%'
-            });
         }});
-    })
-    $('#btn-right').on('click', function(){
-        currentCertificate--;
-        if(currentCertificate < 1){
-            currentCertificate = numCertificates;
-        }
+        
+        // secondCertificate.children().animate({
+        //     width: '40%'
+        // }, {duration: 500, queue: false});
+        // thirdCertificate.children().animate({
+        //     width: '100%'
+        // }, {duration: 500, queue: false, complete: function(){
+            
+        
+            // firstCertificate.children().css({
+            //     width: '40%'
+            // });
+        // }});
+        
+        
+
+    }
+    // $('#btn-right').on('click', function(){
+    //     currentCertificate--;
+    //     if(currentCertificate < 1){
+    //         currentCertificate = numCertificates;
+    //     }
 
 
-        $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
+    //     $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
 
-        $('.certificate').eq(2).animate({
-            height: '0px',
-            width: '0px'
-        }, 1000, function(){
+    //     $('.certificate').eq(2).animate({
+    //         height: '0px',
+    //         width: '0px'
+    //     }, 1000, function(){
 
-        });
-    })
-
-    // $('.certificate').eq(2).each(function(){
-
+    //     });
     // })
-
-    // var interval = window.setInterval(rotateCertificates, 5000);
-    // $('#nextCertificate').on('click', leftCertificate);
-    // $('#previousCertificate').on('click', rightCertificate);
-    
-    // function rotateCertificates(){
-    //     $('#nextCertificate').off('click');
-    //     $('#previousCertificate').off('click');
-
-    //     var firstCertificate = $('.carousel').find('.certificate:first');
-    //     var width = firstCertificate.outerWidth();
-        
-    //     firstCertificate.animate({marginLeft: -width}, 1000, function(){
-    //         var lastCertificate = $('.carousel').find('.certificate:last');
-    //         lastCertificate.after(firstCertificate);
-    //         firstCertificate.css({marginLeft: 4});
-    //         $('#nextCertificate').on('click', leftCertificate);
-    //         $('#previousCertificate').on('click', rightCertificate);
-    //     });
-    // }
-
-    // function leftCertificate(){
-    //     window.clearInterval(interval);
-    //     $('#nextCertificate').off('click');
-    //     $('#previousCertificate').off('click');
-
-    //     var firstCertificate = $('.carousel').find('.certificate:first');
-    //     var width = firstCertificate.outerWidth();
-
-    //     firstCertificate.animate({marginLeft: -width}, 1000, function(){
-    //         var lastCertificate = $('.carousel').find('.certificate:last');
-    //         lastCertificate.after(firstCertificate);
-    //         firstCertificate.css({marginLeft: 4});
-    //         $('#nextCertificate').on('click', leftCertificate);
-    //         $('#previousCertificate').on('click', rightCertificate);
-    //         interval = window.setInterval(rotateCertificates, 5000);
-    //     });
-    //     }
-
-    // function rightCertificate(){
-    //     window.clearInterval(interval);
-    //     $('#nextCertificate').off('click');
-    //     $('#previousCertificate').off('click');
-
-    //     var firstCertificate = $('.carousel').find('.certificate:first');
-    //     var width = firstCertificate.outerWidth();
-    //     var lastCertificate = $('.carousel').find('.certificate:last');
-
-    //     firstCertificate.before(lastCertificate);
-    //     lastCertificate.css({marginLeft: -width});
-        
-    //     lastCertificate.animate({marginLeft: 4}, 1000, function(){
-    //         $('#nextCertificate').on('click', leftCertificate);
-    //         $('#previousCertificate').on('click', rightCertificate);
-    //         interval = window.setInterval(rotateCertificates, 5000);
-    //     });
-    //     }
-
-
-
 });
 
 

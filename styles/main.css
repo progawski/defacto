@@ -225,6 +225,10 @@ body{
 
 /* Offer */
 
+#offer{
+	overflow: hidden;
+}
+
 .offer-title{
 	color: #8d6b9e;
 }
@@ -238,56 +242,77 @@ body{
 	overflow: hidden;
 }
 .certificate-container{
-	display: inline-block;
+	display: inline-flex;
 	width: 33.33%;
 	height: 100%;
-	opacity: 0.5;
 }
-.certificate-container:nth-of-type(2){
-	opacity: 1;
-}
+
 .certificate{
-	height: 100%;
-	width: auto;
+	height: auto;
+	width: 95%;
+	margin: auto;
 }
 #certificates-counter{
 	width: 60px;
 }
 .scale-0{
 	transform: scale(0);
+	opacity: 0;
 	transition: all 500ms;
 }
 .scale-50{
 	transform: scale(0.5);
+	opacity: 0.5;
 	transition: all 500ms;
 }
 .scale-100{
 	transform: scale(1);
+	opacity: 1;
 	transition: all 500ms;
 }
 
+.btn-arrow{
+	border: none;
+	background: none;
+}
+.btn-arrow img{
+	width: 120px;
+	height: auto;
+}
+.btn-arrow:focus {
+	outline: none;
+	box-shadow: none;
+}
+.btn-arrow:active{
+	transform: scale(1.05);
+}
 
 /* RWD */
 
-@media (max-width: 480px) {
-
-}
-
-@media (max-width: 768px){
-	#start h1,
-	#start p{
-		text-align: center;
+@media only screen and (max-width: 992px){
+	.certificate-container{
+		width: 100%;
+	}
+	.certificate{
+		height: 100%;
+		width: auto;
+	}
+	.scale-0{
+		transform: scale(0.5);
+		opacity: 0;
+	}
+	.scale-50{
+		transform: scale(1);
+		opacity: 1;
+	}
+	.scale-100{
+		transform: scale(0.5);
+		opacity: 0;
 	}
 }
 
-@media (max-width: 1024px){
-	
-}
-
-@media (max-width: 1200px){
-	
-}
-
-@media (min-width: 1201px){
-	
+@media only screen and (max-width: 767px){
+	#start h1, #start p{
+		text-align: center;
+	}
 }

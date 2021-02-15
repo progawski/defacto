@@ -338,12 +338,21 @@ address a:hover{
 	border-radius: 10px;
 }
 
+#contact-form input:focus{
+	outline: none;
+}
+
 #contact-form textarea{
 	width: 100%;
 	background-color: #f1e8f6;
 	border: none;
 	font-size: 20px;
 	border-radius: 10px;
+	resize: none;
+}
+
+#contact-form textarea:focus{
+	outline: none;
 }
 
 #contact-form button{
@@ -356,10 +365,53 @@ address a:hover{
 	font-weight: bold;
 }
 
+#contact-form button:focus{
+	outline: none;
+}
+
+#contact-form button:hover{
+	background-color: #fff;
+	color: #7e43a1;
+}
+
 #contact-form *::placeholder{
 	color: #ccbfd3;
 }
 
+#message-success{
+	background-color: #7e43a1;
+	color: #fff;
+	box-shadow: 0px 2px 15px rgba(67, 48, 77, 0.6);
+}
+.close {
+    color: #fff; 
+    opacity: 1;
+	cursor: pointer;
+}
+.close:focus{
+	color: #4a275e;
+	outline: none;
+}
+.alert{
+	display: flex;
+    align-items: baseline;
+}
+
+/* Footer */
+
+footer{
+	background-color: #7e43a1;
+	color: #fff;
+}
+
+footer a{
+	color: #fff;
+}
+
+footer a:hover{
+	color: #4a275e;
+	text-decoration: none;
+}
 
 
 /* RWD */

@@ -1,8 +1,5 @@
 $(document).ready(function(){
 
-    
- 
-
     // Hamburger effect and menu slider
 
     var $hamburger = $(".hamburger");
@@ -10,8 +7,6 @@ $(document).ready(function(){
         $hamburger.toggleClass("is-active"); 
         $("#menu").slideToggle();
     });
-
-    var smallCarousel = false;
 
     $(window).resize(function() {
         if($(window).width() >= 768) {
@@ -26,7 +21,7 @@ $(document).ready(function(){
     
     // Smooth auto-scrolling
 
-    $("a[href^='#']").click(function(e) {
+    $(".nav-link[href^='#']").click(function(e) {
         e.preventDefault(); 
         var position = $($(this).attr("href")).offset().top; 
         $("body, html").animate({scrollTop: position}, 1000, 'swing');
@@ -133,23 +128,28 @@ $(document).ready(function(){
         
     }
 
-
-    // $('#btn-right').on('click', function(){
-    //     currentCertificate--;
-    //     if(currentCertificate < 1){
-    //         currentCertificate = numCertificates;
-    //     }
-
-
-    //     $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
-
-    //     $('.certificate').eq(2).animate({
-    //         height: '0px',
-    //         width: '0px'
-    //     }, 1000, function(){
-
+    // function sendMessage(){
+    //     var message = {
+    //         name: $("#tName").val(),
+    //         email: $("#eEmail").val(),
+    //         content: $("#taContent").val(),
+    //     };
+    //     $.ajax({
+    //         url: "contact.php",
+    //         method: "POST",
+    //         timeout: 10000,
+    //         dataType: "json",
+    //         data: JSON.stringify(message)
+    //     }).done(addedUser => {
+    //        $("#sAddedUser").html(JSON.stringify(addedUser));
+    //     }).fail(function(xhr, status, message){
+    //         if(xhr.status == 404)
+    //             alert("Action does not exist");
+    //         else
+    //             alert(message);
     //     });
-    // })
+    // }
+
 });
 
 

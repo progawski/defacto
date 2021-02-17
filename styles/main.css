@@ -39,26 +39,12 @@ body{
 }
 
 .title{
-	color: #707070;
-	background-color: #e5d7eb;
+	
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	color: #000;
+	font-size: 42px;
 }
-
-.mt-6{
-	margin-top: 80px;
-}
-
-.mt-7{
-	margin-top: 120px;
-}
-
-.section-space{
-	margin-top: 50px;
-	margin-bottom: 50px;
-}
-.section-space:first-child{
-	margin-top: 100px;
-}
-
 
 /* Hexagons */
 
@@ -75,6 +61,8 @@ body{
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: center;
   }
+
+/* Hexagon sizes */
 
 .hex-size-1{
 	width: 80px;
@@ -109,7 +97,7 @@ body{
 	height: 450px;
 }
 
-
+/* Hexagons colors */
 
 .hex-color-1{
 	background-color: rgba(230, 220, 236, 0.75);
@@ -135,6 +123,7 @@ body{
 .nav-link{
     position: relative;
     color: #672290;
+	font-size: 20px;
 }
 
 .nav-link:hover{
@@ -150,9 +139,11 @@ body{
 	background: #672290;
 	content: '';
 	opacity: 0;
+
 	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
 	transition: opacity 0.3s, transform 0.3s;
+
 	-webkit-transform: translateY(-10px);
 	-moz-transform: translateY(-10px);
 	transform: translateY(-10px);
@@ -160,6 +151,7 @@ body{
 
 .nav-link::before {
 	top: 0;
+
 	-webkit-transform: translateY(-10px);
 	-moz-transform: translateY(-10px);
 	transform: translateY(-10px);
@@ -167,6 +159,7 @@ body{
 
 .nav-link::after {
 	bottom: 0;
+
 	-webkit-transform: translateY(10px);
 	-moz-transform: translateY(10px);
 	transform: translateY(10px);
@@ -177,6 +170,7 @@ body{
 .nav-link:hover::after,
 .nav-link:focus::after {
 	opacity: 1;
+
 	-webkit-transform: translateY(0px);
 	-moz-transform: translateY(0px);
 	transform: translateY(0px);
@@ -197,17 +191,9 @@ body{
 .jumbotron{
     max-height: 758px;
 }
- 
-.jumbotron h1{
-    font-family: "Teko";
-}
 
 .jumbotron h1 span{
     color: #672290;
-}
-
-.jumbotron p{
-    font-family: "Assistant";
 }
 
 .jumbotron-image {
@@ -221,24 +207,37 @@ body{
 
 #about{
 	overflow: hidden;
+	padding-top: 250px;
+	padding-bottom: 100px;
 }
 
 #profile-photo{
 	width: 300px;
 }
 
-
 /* Offer */
 
 #offer{
 	overflow: hidden;
+	padding-top: 150px;
+	padding-bottom: 100px;
 }
 
 .offer-title{
 	color: #8d6b9e;
 }
 
+.offer-icon{
+	max-width: 200px;
+}
+
 /* Certificates */
+
+#certificates{
+	overflow: hidden;
+	padding-top: 150px;
+	padding-bottom: 100px;
+}
 
 #carousel-container{
 	width: 100%;
@@ -246,6 +245,7 @@ body{
 	white-space: nowrap;
 	overflow: hidden;
 }
+
 .certificate-container{
 	display: inline-flex;
 	width: 33.33%;
@@ -258,9 +258,11 @@ body{
 	margin: auto;
 	box-shadow: 0px 2px 15px rgba(67, 48, 77, 0.6);
 }
+
 #certificates-counter{
 	width: 60px;
 }
+
 .scale-0{
 	transform: scale(0);
 	opacity: 0;
@@ -281,19 +283,28 @@ body{
 	border: none;
 	background: none;
 }
+
 .btn-arrow img{
-	width: 120px;
+	width: 100px;
 	height: auto;
 }
+
 .btn-arrow:focus {
 	outline: none;
 	box-shadow: none;
 }
+
 .btn-arrow:active{
 	transform: scale(1.05);
 }
 
 /* Contact */
+
+#contact{
+	overflow: hidden;
+	padding-top: 150px;
+	padding-bottom: 100px;
+}
 
 .map-container{
 	background-image: url('../images/map.png');
@@ -342,7 +353,7 @@ address a:hover{
 	outline: none;
 }
 
-#contact-form textarea{
+#content{
 	width: 100%;
 	background-color: #f1e8f6;
 	border: none;
@@ -351,11 +362,11 @@ address a:hover{
 	resize: none;
 }
 
-#contact-form textarea:focus{
+#content:focus{
 	outline: none;
 }
 
-#contact-form button{
+#btnSend{
 	width: 100%;
 	background-color: #7e43a1;
 	color: #fff;
@@ -365,11 +376,11 @@ address a:hover{
 	font-weight: bold;
 }
 
-#contact-form button:focus{
+#btnSend:focus{
 	outline: none;
 }
 
-#contact-form button:hover{
+#btnSend:hover{
 	background-color: #fff;
 	color: #7e43a1;
 }
@@ -383,15 +394,18 @@ address a:hover{
 	color: #fff;
 	box-shadow: 0px 2px 15px rgba(67, 48, 77, 0.6);
 }
+
 .close {
     color: #fff; 
     opacity: 1;
 	cursor: pointer;
 }
+
 .close:focus{
 	color: #4a275e;
 	outline: none;
 }
+
 .alert{
 	display: flex;
     align-items: baseline;
@@ -400,19 +414,23 @@ address a:hover{
 /* Footer */
 
 footer{
+	padding-top: 150px;
+}
+
+#footer-container{
+	overflow: hidden;
 	background-color: #7e43a1;
 	color: #fff;
 }
 
-footer a{
+#footer-container a{
 	color: #fff;
 }
 
-footer a:hover{
+#footer-container a:hover{
 	color: #4a275e;
 	text-decoration: none;
 }
-
 
 /* RWD */
 
@@ -441,6 +459,9 @@ footer a:hover{
 @media only screen and (max-width: 767px){
 	#start h1, #start p{
 		text-align: center;
+	}
+	.hex-hide{
+		display: none;
 	}
 }
 

@@ -23,28 +23,13 @@ $(document).ready(function(){
 
     $(".nav-link[href^='#']").click(function(e) {
         e.preventDefault(); 
-        var position = $($(this).attr("href")).offset().top; 
-        $("body, html").animate({scrollTop: position}, 1000, 'swing');
+        var id = $(this).attr("href");
+        if(id !== '#start'){
+            var position = $(id + ' .title').offset().top; 
+            $("body, html").animate({scrollTop: position}, 1000, 'swing');
+        }
     });
 
-    // Visibility of auto-scrolling icon
-
-    // $("#top-icon").css("visibility", "0");
-
-    // $(window).scroll(function() {
-    //     if($(window).scrollTop() > $(window).height()){
-    //         $("#top-icon").css({
-    //             opacity : 0.7,
-    //             transition : "opacity 0.3s ease-in-out"
-    //         });
-    //     } else {
-    //         $("#top-icon").css({
-    //             opacity : 0,
-    //             transition : "opacity 0.3s ease-in-out"
-    //         });
-    //     }
-    // });
-    
     //Carousel
 
     var numCertificates = $('.certificate').length;
@@ -52,10 +37,8 @@ $(document).ready(function(){
 
     $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
 
-
     $('#btn-left').on('click', rotateLeft);
     $('#btn-right').on('click', rotateRight);
-
 
     function rotateLeft(){
         $('#btn-left').off('click');
@@ -77,7 +60,6 @@ $(document).ready(function(){
         thirdCertificate.children().removeClass('scale-0 scale-50').addClass('scale-100');
         lastCertificate.children().removeClass('scale-0 scale-100').addClass('scale-50');
 
-
         firstCertificate.animate({
             marginLeft: -width
         }, {duration: 500, queue: false, complete: function(){
@@ -86,8 +68,7 @@ $(document).ready(function(){
             firstCertificate.css({
                 marginLeft: '0',
             });
-        }});
-        
+        }});     
     }
     function rotateRight(){
         $('#btn-right').off('click');
@@ -98,7 +79,6 @@ $(document).ready(function(){
 
         $('#certificates-counter').text(currentCertificate + '/' + numCertificates);
 
-      
         var firstCertificate = $('#carousel-container').find('.certificate-container:nth(2)');
         var secondCertificate = $('#carousel-container').find('.certificate-container:nth(1)');
         var thirdCertificate = $('#carousel-container').find('.certificate-container:first');
@@ -114,41 +94,28 @@ $(document).ready(function(){
         thirdCertificate.children().removeClass('scale-0 scale-50').addClass('scale-100');
         lastCertificate.children().removeClass('scale-0 scale-100').addClass('scale-50');
 
-
-
-        lastCertificate.animate({
-            
+        lastCertificate.animate({         
             marginLeft: 0
-        }, {duration: 500, queue: false, complete: function(){
-           
+        }, {duration: 500, queue: false, complete: function(){         
             $('#btn-right').on('click', rotateRight);
-      
-            
         }});
-        
     }
 
-    // function sendMessage(){
-    //     var message = {
-    //         name: $("#tName").val(),
-    //         email: $("#eEmail").val(),
-    //         content: $("#taContent").val(),
-    //     };
-    //     $.ajax({
-    //         url: "contact.php",
-    //         method: "POST",
-    //         timeout: 10000,
-    //         dataType: "json",
-    //         data: JSON.stringify(message)
-    //     }).done(addedUser => {
-    //        $("#sAddedUser").html(JSON.stringify(addedUser));
-    //     }).fail(function(xhr, status, message){
-    //         if(xhr.status == 404)
-    //             alert("Action does not exist");
-    //         else
-    //             alert(message);
-    //     });
-    // }
+    /* Fulscreen modal */
+
+    var modal = $('#modal');
+    var modalContent = $('#modal-content');
+    var certificate = $('.certificate');
+    var closeModal = $('#close-modal')
+
+    certificate.on('click', function(){
+        modal.show();
+        modalContent.attr('src', $(this).attr('src'));
+    });
+
+    closeModal.on('click', function(){
+        modal.hide();
+    })
 
 });
 

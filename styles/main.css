@@ -121,9 +121,10 @@ body{
 /* Navigation bar */
 
 .nav-link{
+	display: inline-block;
     position: relative;
     color: #672290;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .nav-link:hover{
@@ -257,6 +258,7 @@ body{
 	width: 90%;
 	margin: auto;
 	box-shadow: 0px 2px 15px rgba(67, 48, 77, 0.6);
+	cursor: pointer;
 }
 
 #certificates-counter{
@@ -297,6 +299,56 @@ body{
 .btn-arrow:active{
 	transform: scale(1.05);
 }
+
+#modal {
+	display: none;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.9);
+  }
+
+#modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 767px;
+}
+
+#modal-content{  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+  
+@-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+}
+  
+#close-modal {
+	position: absolute;
+	color: #fff; 
+	top: 0;
+	right: 0;
+	font-size: 40px;
+	transition: 0.3s;
+}
+
+#close-modal:hover{
+	color: #878787;
+	cursor: pointer;
+}
+  
 
 /* Contact */
 
@@ -395,13 +447,13 @@ address a:hover{
 	box-shadow: 0px 2px 15px rgba(67, 48, 77, 0.6);
 }
 
-.close {
+#close-message {
     color: #fff; 
     opacity: 1;
 	cursor: pointer;
 }
 
-.close:focus{
+#close-message:focus{
 	color: #4a275e;
 	outline: none;
 }
@@ -463,5 +515,8 @@ footer{
 	.hex-hide{
 		display: none;
 	}
+	#modal-content {
+		width: 100%;
+	  }
 }
 

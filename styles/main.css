@@ -302,6 +302,7 @@ body{
 
 #modal {
 	display: none;
+	flex-direction: column;
 	z-index: 1;
 	left: 0;
 	top: 0;
@@ -336,12 +337,8 @@ body{
 }
   
 #close-modal {
-	position: absolute;
 	color: #fff; 
-	top: 0;
-	right: 0;
 	font-size: 40px;
-	transition: 0.3s;
 }
 
 #close-modal:hover{
@@ -349,7 +346,6 @@ body{
 	cursor: pointer;
 }
   
-
 /* Contact */
 
 #contact{
@@ -449,13 +445,12 @@ address a:hover{
 
 #close-message {
     color: #fff; 
-    opacity: 1;
-	cursor: pointer;
+	font-size: 40px;
 }
 
-#close-message:focus{
+#close-message:hover{
 	color: #4a275e;
-	outline: none;
+	cursor: pointer;
 }
 
 .alert{
@@ -516,7 +511,7 @@ footer{
 		display: none;
 	}
 	#modal-content {
-		width: 100%;
+		width: 95%;
 	  }
 }
 

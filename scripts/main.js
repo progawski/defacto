@@ -110,12 +110,23 @@ $(document).ready(function(){
 
     certificate.on('click', function(){
         modal.show();
+        modal.css('display', 'flex');
         modalContent.attr('src', $(this).attr('src'));
     });
 
     closeModal.on('click', function(){
         modal.hide();
     })
+
+    $(document).on('keyup', function(e){
+        if(e.key === 'Escape'){
+            modal.hide();
+        }
+    })
+
+    /* Get current year */
+
+    $("#current-year").text(new Date().getFullYear());
 
 });
 

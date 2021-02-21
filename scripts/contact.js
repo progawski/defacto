@@ -3,7 +3,7 @@ $(document).ready(function(){
     $(".close").click(function(){
         $("#message-success").hide();
     })
-    $("#btnSend").click(function(){
+    $("#btnSend").on('click touchstart', function(){
         $.ajax({
             url: "./php/contact.php",
             method: "POST",
